@@ -3,12 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>رحلتي - للخدمات السياحية</title>
+  <title>Interpoint - للخدمات السياحية</title>
   <style>
-    /* ========== الألوان والأساسيات ========== */
     :root {
       --primary-color: #0284c7;
       --primary-hover: #0369a1;
+      --whatsapp-color: #25D366;
+      --whatsapp-hover: #1da851;
       --bg-color: #f8fafc;
       --card-bg: #ffffff;
       --text-color: #0f172a;
@@ -29,7 +30,6 @@
       line-height: 1.6;
     }
 
-    /* ========== القائمة الرئيسية (Navbar) ========== */
     header {
       background: var(--card-bg);
       box-shadow: 0 1px 3px rgba(0,0,0,0.1);
@@ -58,14 +58,8 @@
       text-decoration: none;
       color: var(--text-color);
       font-weight: 500;
-      transition: color 0.2s;
     }
 
-    nav a:hover {
-      color: var(--primary-color);
-    }
-
-    /* ========== قسم البداية (Hero) ========== */
     .hero {
       text-align: center;
       padding: 4rem 1.5rem;
@@ -77,12 +71,6 @@
       margin-bottom: 0.5rem;
     }
 
-    .hero p {
-      color: var(--text-muted);
-      font-size: 1.1rem;
-    }
-
-    /* ========== التنسيق العام للأقسام ========== */
     section {
       max-width: 1100px;
       margin: 3rem auto;
@@ -95,7 +83,6 @@
       margin-bottom: 2rem;
     }
 
-    /* ========== قسم الخدمات والأسعار ========== */
     .services-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -119,11 +106,6 @@
       margin-bottom: 0.8rem;
     }
 
-    .service-card h3 {
-      font-size: 1.3rem;
-      margin-bottom: 0.5rem;
-    }
-
     .starting-price {
       font-size: 1.2rem;
       font-weight: bold;
@@ -131,74 +113,28 @@
       margin: 0.8rem 0;
     }
 
-    .service-card ul {
-      list-style: none;
-      color: var(--text-muted);
-      font-size: 0.95rem;
-      margin-bottom: 1.2rem;
-      text-align: right;
-      padding-right: 1rem;
-    }
-
-    .service-card ul li {
-      margin-bottom: 0.4rem;
-    }
-
-    /* ========== قسم العروض الخاصة ========== */
-    .packages-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .package-card {
-      background: var(--card-bg);
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
-      padding: 1rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .package-img {
-      width: 100%;
-      height: 150px;
-      background: #cbd5e1;
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--text-muted);
-      margin-bottom: 1rem;
-      font-weight: 500;
-    }
-
-    .price {
-      font-weight: bold;
-      color: var(--primary-color);
-      margin: 0.5rem 0;
-    }
-
-    /* ========== الأزرار ========== */
-    .btn {
-      background: var(--primary-color);
+    .btn-wa {
+      background: var(--whatsapp-color);
       color: white;
       border: none;
-      padding: 0.6rem 1rem;
+      padding: 0.7rem 1rem;
       border-radius: 6px;
       cursor: pointer;
       width: 100%;
-      font-size: 0.95rem;
+      font-size: 1rem;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      text-decoration: none;
       transition: background 0.2s;
     }
 
-    .btn:hover {
-      background: var(--primary-hover);
+    .btn-wa:hover {
+      background: var(--whatsapp-hover);
     }
 
-    /* ========== قسم التواصل والفوتر ========== */
     .contact-form {
       max-width: 500px;
       margin: 0 auto;
@@ -223,7 +159,6 @@
       padding: 0.6rem;
       border: 1px solid #cbd5e1;
       border-radius: 6px;
-      outline: none;
     }
 
     footer {
@@ -231,163 +166,112 @@
       padding: 1.5rem;
       background: var(--card-bg);
       margin-top: 4rem;
-      color: var(--text-muted);
       border-top: 1px solid #e2e8f0;
+      color: var(--text-muted);
     }
   </style>
 </head>
 <body>
 
-  <!-- القائمة الرئيسية -->
   <header>
     <div class="nav-container">
-      <div class="logo">رحلتي ✈️</div>
+      <div class="logo">Interpoint ✈️</div>
       <nav>
         <a href="#services">الخدمات والأسعار</a>
-        <a href="#offers">أحدث العروض</a>
-        <a href="#contact">حجز واستفسار</a>
+        <a href="#contact">حجز واتساب</a>
       </nav>
     </div>
   </header>
 
-  <!-- الواجهة الرئيسية -->
   <div class="hero">
-    <h1>استكشف العالم معنا بأفضل الأسعار</h1>
-    <p>حجوزات طيران، فنادق فاخرة، ورحلات بحرية ممتعة</p>
+    <h1>مرحباً بك في Interpoint</h1>
+    <p>أفضل الرحلات الحصريّة والحجوزات بأسهل طريقة عبر الواتساب مباشرة</p>
   </div>
 
-  <!-- قسم الخدمات والأسعار -->
   <section id="services">
-    <h2 class="section-title">خدماتنا وأسعارها</h2>
+    <h2 class="section-title">خدماتنا</h2>
     <div class="services-grid">
       
       <!-- خدمة الفنادق -->
       <div class="service-card">
         <div>
           <div class="service-icon">🏨</div>
-          <h3>أسعار الفنادق</h3>
+          <h3>حجز الفنادق</h3>
           <p class="starting-price">تبدأ من 1200 ج.م / ليلة</p>
-          <ul>
-            <li>✔ فنادق 3، 4، و5 نجوم</li>
-            <li>✔ إمكانية الإلغاء المجاني</li>
-            <li>✔ شامل الإفطار في معظم الفنادق</li>
-          </ul>
         </div>
-        <button class="btn" onclick="selectService('حجز فنادق')">استعلم عن الفنادق</button>
+        <button class="btn-wa" onclick="sendToWhatsApp('حجز فنادق')">💬 احجز عبر الواتساب</button>
       </div>
 
       <!-- خدمة التذاكر -->
       <div class="service-card">
         <div>
           <div class="service-icon">✈️</div>
-          <h3>أسعار تذاكر الطيران</h3>
+          <h3>تذاكر الطيران</h3>
           <p class="starting-price">تبدأ من 2500 ج.م</p>
-          <ul>
-            <li>✔ طيران داخلي وخارجي</li>
-            <li>✔ خصومات على الرحلات الذهاب والعودة</li>
-            <li>✔ أوزان أمتعة إضافية مجانية</li>
-          </ul>
         </div>
-        <button class="btn" onclick="selectService('حجز تذاكر طيران')">احجز تذكرتك</button>
+        <button class="btn-wa" onclick="sendToWhatsApp('حجز تذاكر طيران')">💬 احجز عبر الواتساب</button>
       </div>
 
       <!-- خدمة الكروز -->
       <div class="service-card">
         <div>
           <div class="service-icon">🚢</div>
-          <h3>أسعار الرحلات البحرية (الكروز)</h3>
-          <p class="starting-price">تبدأ من 4500 ج.م / الفرد</p>
-          <ul>
-            <li>✔ رحلات نيلية وبحرية متكاملة</li>
-            <li>✔ إقامة شاملة جميع الوجبات (All Inclusive)</li>
-            <li>✔ برامج ترفيهية وجولات سياحية</li>
-          </ul>
+          <h3>رحلات الكروز</h3>
+          <p class="starting-price">تبدأ من 4500 ج.م</p>
         </div>
-        <button class="btn" onclick="selectService('حجز رحلة كروز')">استكشف رحلات الكروز</button>
+        <button class="btn-wa" onclick="sendToWhatsApp('رحلة كروز')">💬 احجز عبر الواتساب</button>
       </div>
 
     </div>
   </section>
 
-  <!-- قسم العروض -->
-  <section id="offers">
-    <h2 class="section-title">أحدث عروض الرحلات</h2>
-    <div class="packages-grid">
-      <div class="package-card">
-        <div class="package-img">صورة شرم الشيخ</div>
-        <h3>رحلة شرم الشيخ (4 أيام)</h3>
-        <p>فندق 4 نجوم + الإنتقالات</p>
-        <p class="price">3,200 ج.م</p>
-        <button class="btn" onclick="selectService('عرض شرم الشيخ')">احجز الآن</button>
-      </div>
-
-      <div class="package-card">
-        <div class="package-img">صورة كروز الأقصر وأسوان</div>
-        <h3>كروز الأقصر وأسوان (5 أيام)</h3>
-        <p>نايل كروز 5 نجوم ديلوكس</p>
-        <p class="price">6,800 ج.م</p>
-        <button class="btn" onclick="selectService('عرض كروز الأقصر وأسوان')">احجز الآن</button>
-      </div>
-
-      <div class="package-card">
-        <div class="package-img">صورة دبي</div>
-        <h3>رحلة دبي (5 أيام)</h3>
-        <p>شاملة الطيران والفندق والتأشيرة</p>
-        <p class="price">18,500 ج.م</p>
-        <button class="btn" onclick="selectService('عرض دبي')">احجز الآن</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- قسم التواصل والحجز -->
+  <!-- نموذج التواصل المباشر للواتساب -->
   <section id="contact">
-    <h2 class="section-title">تواصل معنا للحجز والاستفسار</h2>
-    <form class="contact-form" onsubmit="handleContact(event)">
+    <h2 class="section-title">إرسال تفاصيل الرحلة للواتساب</h2>
+    <form class="contact-form" onsubmit="sendFormToWhatsApp(event)">
       <div class="form-group">
         <label>الاسم بالكامل</label>
-        <input type="text" required placeholder="اكتب اسمك">
-      </div>
-      <div class="form-group">
-        <label>رقم الهاتف / الواتساب</label>
-        <input type="tel" required placeholder="01xxxxxxxxx">
+        <input type="text" id="cust-name" required placeholder="اكتب اسمك">
       </div>
       <div class="form-group">
         <label>الخدمة المطلوبة</label>
-        <select id="service-select">
-          <option value="استفسار عام">استفسار عام</option>
+        <select id="cust-service">
           <option value="حجز فنادق">حجز فنادق</option>
           <option value="حجز تذاكر طيران">حجز تذاكر طيران</option>
-          <option value="حجز رحلة كروز">حجز رحلة كروز</option>
+          <option value="رحلة كروز">رحلة كروز</option>
         </select>
       </div>
       <div class="form-group">
-        <label>ملاحظات أو استفسار خاص</label>
-        <textarea rows="3" placeholder="اكتب تفاصيل رحلتك المفضل أو عدد الأفراد..."></textarea>
+        <label>تفاصيل أو ملاحظات</label>
+        <textarea id="cust-notes" rows="3" placeholder="عدد الأفراد، التواريخ..."></textarea>
       </div>
-      <button type="submit" class="btn">إرسال الطلب</button>
+      <button type="submit" class="btn-wa">📱 إرسال الطلب للواتساب</button>
     </form>
   </section>
 
-  <!-- الفوتر -->
   <footer>
-    <p>جميع الحقوق محفوظة &copy; 2026 - موقع رحلتي للسياحة والسفر</p>
+    <p>جميع الحقوق محفوظة &copy; 2026 - Interpoint</p>
   </footer>
 
-  <!-- تفاعلية JavaScript -->
   <script>
-    function selectService(serviceName) {
-      const select = document.getElementById('service-select');
-      select.value = serviceName.includes('كروز') ? 'حجز رحلة كروز' : 
-                     serviceName.includes('تذاكر') || serviceName.includes('طيران') ? 'حجز تذاكر طيران' : 
-                     serviceName.includes('فنادق') ? 'حجز فنادق' : 'استفسار عام';
-      
-      document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+    // تم تحديث رقم الواتساب إلى الرقم الجديد
+    const myPhoneNumber = "201147885100"; 
+
+    function sendToWhatsApp(serviceName) {
+      const message = `مرحباً Interpoint! أريد الاستفسار والحجز لـ: (${serviceName})`;
+      const url = `https://wa.me/${myPhoneNumber}?text=${encodeURIComponent(message)}`;
+      window.open(url, '_blank');
     }
 
-    function handleContact(event) {
+    function sendFormToWhatsApp(event) {
       event.preventDefault();
-      alert('تم استلام طلبك بنجاح! سيتواصل معك أحد ممثلي الخدمة في أسرع وقت.');
-      event.target.reset();
+      const name = document.getElementById('cust-name').value;
+      const service = document.getElementById('cust-service').value;
+      const notes = document.getElementById('cust-notes').value;
+
+      const message = `مرحباً Interpoint! 👋\n\nتفاصيل طلب الحجز:\n- الاسم: ${name}\n- الخدمة: ${service}\n- ملاحظات: ${notes}`;
+      const url = `https://wa.me/${myPhoneNumber}?text=${encodeURIComponent(message)}`;
+      window.open(url, '_blank');
     }
   </script>
 </body>
