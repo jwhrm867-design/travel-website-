@@ -3,13 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Interpoint - للخدمات السياحية</title>
+  <title>Interpoint - للخدمات السياحية والفنادق</title>
   <style>
     :root {
       --primary-color: #0284c7;
       --primary-hover: #0369a1;
       --whatsapp-color: #25D366;
       --whatsapp-hover: #1da851;
+      --youtube-color: #ff0000;
       --bg-color: #f8fafc;
       --card-bg: #ffffff;
       --text-color: #0f172a;
@@ -62,18 +63,18 @@
 
     .hero {
       text-align: center;
-      padding: 4rem 1.5rem;
+      padding: 3rem 1.5rem;
       background: linear-gradient(to bottom, var(--accent-color), var(--bg-color));
     }
 
     .hero h1 {
-      font-size: 2.5rem;
+      font-size: 2.2rem;
       margin-bottom: 0.5rem;
     }
 
     section {
       max-width: 1100px;
-      margin: 3rem auto;
+      margin: 2.5rem auto;
       padding: 0 1.5rem;
     }
 
@@ -83,82 +84,84 @@
       margin-bottom: 2rem;
     }
 
-    .services-grid {
+    .hotels-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.8rem;
     }
 
-    .service-card {
+    .hotel-card {
       background: var(--card-bg);
-      padding: 1.8rem;
       border-radius: 12px;
-      text-align: center;
-      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+      overflow: hidden;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.08);
       border: 1px solid #e2e8f0;
       display: flex;
       flex-direction: column;
+    }
+
+    .hotel-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .hotel-content {
+      padding: 1.2rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
       justify-content: space-between;
     }
 
-    .service-icon {
-      font-size: 2.5rem;
-      margin-bottom: 0.8rem;
+    .hotel-location {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
     }
 
-    .starting-price {
+    .hotel-price {
       font-size: 1.2rem;
       font-weight: bold;
       color: var(--primary-color);
       margin: 0.8rem 0;
     }
 
+    .action-buttons {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 0.8rem;
+    }
+
+    .btn-video {
+      background: #fef2f2;
+      color: var(--youtube-color);
+      border: 1px solid #fca5a5;
+      padding: 0.6rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      flex: 1;
+      text-decoration: none;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
     .btn-wa {
       background: var(--whatsapp-color);
       color: white;
       border: none;
-      padding: 0.7rem 1rem;
+      padding: 0.6rem;
       border-radius: 6px;
       cursor: pointer;
-      width: 100%;
-      font-size: 1rem;
       font-weight: bold;
+      flex: 1.5;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 0.5rem;
+      gap: 0.3rem;
       text-decoration: none;
-      transition: background 0.2s;
-    }
-
-    .btn-wa:hover {
-      background: var(--whatsapp-hover);
-    }
-
-    .contact-form {
-      max-width: 500px;
-      margin: 0 auto;
-      background: var(--card-bg);
-      padding: 1.5rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
-    }
-
-    .form-group {
-      margin-bottom: 1rem;
-    }
-
-    .form-group label {
-      display: block;
-      margin-bottom: 0.3rem;
       font-size: 0.9rem;
-    }
-
-    .form-group input, .form-group select, .form-group textarea {
-      width: 100%;
-      padding: 0.6rem;
-      border: 1px solid #cbd5e1;
-      border-radius: 6px;
     }
 
     footer {
@@ -177,76 +180,69 @@
     <div class="nav-container">
       <div class="logo">Interpoint ✈️</div>
       <nav>
-        <a href="#services">الخدمات والأسعار</a>
-        <a href="#contact">حجز واتساب</a>
+        <a href="#hotels">الفنادق المتاحة</a>
       </nav>
     </div>
   </header>
 
   <div class="hero">
-    <h1>مرحباً بك في Interpoint</h1>
-    <p>أفضل الرحلات الحصريّة والحجوزات بأسهل طريقة عبر الواتساب مباشرة</p>
+    <h1>حجوزات الفنادق المباشرة - Interpoint</h1>
+    <p>استعرض الفنادق الحقيقية، شاهد جولة بالفيديو للغرف، واحجز فوراً على الواتساب!</p>
   </div>
 
-  <section id="services">
-    <h2 class="section-title">خدماتنا</h2>
-    <div class="services-grid">
+  <section id="hotels">
+    <h2 class="section-title">أفضل الفنادق والمنتجعات</h2>
+    <div class="hotels-grid">
       
-      <!-- خدمة الفنادق -->
-      <div class="service-card">
-        <div>
-          <div class="service-icon">🏨</div>
-          <h3>حجز الفنادق</h3>
-          <p class="starting-price">تبدأ من 1200 ج.م / ليلة</p>
+      <!-- فندق 1 -->
+      <div class="hotel-card">
+        <img class="hotel-img" src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=600&q=80" alt="Rixos Sharm">
+        <div class="hotel-content">
+          <div>
+            <h3>فندق ريكسوس شرم الشيخ (Rixos)</h3>
+            <p class="hotel-location">📍 خليج نبق، شرم الشيخ (شامل جميع الوجبات والمشروبات)</p>
+            <p class="hotel-price">تبدأ من 8,500 ج.م / ليلة</p>
+          </div>
+          <div class="action-buttons">
+            <a class="btn-video" href="https://www.youtube.com/results?search_query=Rixos+Sharm+El+Sheikh+tour" target="_blank">🎥 فيديو الفندق</a>
+            <button class="btn-wa" onclick="sendToWhatsApp('فندق ريكسوس شرم الشيخ - 8500 ج.م')">💬 احجز واتساب</button>
+          </div>
         </div>
-        <button class="btn-wa" onclick="sendToWhatsApp('حجز فنادق')">💬 احجز عبر الواتساب</button>
       </div>
 
-      <!-- خدمة التذاكر -->
-      <div class="service-card">
-        <div>
-          <div class="service-icon">✈️</div>
-          <h3>تذاكر الطيران</h3>
-          <p class="starting-price">تبدأ من 2500 ج.م</p>
+      <!-- فندق 2 -->
+      <div class="hotel-card">
+        <img class="hotel-img" src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=600&q=80" alt="Al Masa Hotel">
+        <div class="hotel-content">
+          <div>
+            <h3>فندق الماسة العاصمة الإدارية</h3>
+            <p class="hotel-location">📍 العاصمة الإدارية الجديدة، القاهرة (شامل الإفطار)</p>
+            <p class="hotel-price">تبدأ من 4,200 ج.م / ليلة</p>
+          </div>
+          <div class="action-buttons">
+            <a class="btn-video" href="https://www.youtube.com/results?search_query=Al+Masa+Hotel+New+Capital+tour" target="_blank">🎥 فيديو الفندق</a>
+            <button class="btn-wa" onclick="sendToWhatsApp('فندق الماسة العاصمة الإدارية - 4200 ج.م')">💬 احجز واتساب</button>
+          </div>
         </div>
-        <button class="btn-wa" onclick="sendToWhatsApp('حجز تذاكر طيران')">💬 احجز عبر الواتساب</button>
       </div>
 
-      <!-- خدمة الكروز -->
-      <div class="service-card">
-        <div>
-          <div class="service-icon">🚢</div>
-          <h3>رحلات الكروز</h3>
-          <p class="starting-price">تبدأ من 4500 ج.م</p>
+      <!-- فندق 3 -->
+      <div class="hotel-card">
+        <img class="hotel-img" src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=600&q=80" alt="Steigenberger Luxor">
+        <div class="hotel-content">
+          <div>
+            <h3>فندق شتايجنبرجر نيل بالاس</h3>
+            <p class="hotel-location">📍 الأقصر (إطلالة مباشرة على النيل)</p>
+            <p class="hotel-price">تبدأ من 3,100 ج.م / ليلة</p>
+          </div>
+          <div class="action-buttons">
+            <a class="btn-video" href="https://www.youtube.com/results?search_query=Steigenberger+Nile+Palace+Luxor" target="_blank">🎥 فيديو الفندق</a>
+            <button class="btn-wa" onclick="sendToWhatsApp('فندق شتايجنبرجر الأقصر - 3100 ج.م')">💬 احجز واتساب</button>
+          </div>
         </div>
-        <button class="btn-wa" onclick="sendToWhatsApp('رحلة كروز')">💬 احجز عبر الواتساب</button>
       </div>
 
     </div>
-  </section>
-
-  <!-- نموذج التواصل المباشر للواتساب -->
-  <section id="contact">
-    <h2 class="section-title">إرسال تفاصيل الرحلة للواتساب</h2>
-    <form class="contact-form" onsubmit="sendFormToWhatsApp(event)">
-      <div class="form-group">
-        <label>الاسم بالكامل</label>
-        <input type="text" id="cust-name" required placeholder="اكتب اسمك">
-      </div>
-      <div class="form-group">
-        <label>الخدمة المطلوبة</label>
-        <select id="cust-service">
-          <option value="حجز فنادق">حجز فنادق</option>
-          <option value="حجز تذاكر طيران">حجز تذاكر طيران</option>
-          <option value="رحلة كروز">رحلة كروز</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label>تفاصيل أو ملاحظات</label>
-        <textarea id="cust-notes" rows="3" placeholder="عدد الأفراد، التواريخ..."></textarea>
-      </div>
-      <button type="submit" class="btn-wa">📱 إرسال الطلب للواتساب</button>
-    </form>
   </section>
 
   <footer>
@@ -254,22 +250,10 @@
   </footer>
 
   <script>
-    // تم تحديث رقم الواتساب إلى الرقم الجديد
     const myPhoneNumber = "201147885100"; 
 
-    function sendToWhatsApp(serviceName) {
-      const message = `مرحباً Interpoint! أريد الاستفسار والحجز لـ: (${serviceName})`;
-      const url = `https://wa.me/${myPhoneNumber}?text=${encodeURIComponent(message)}`;
-      window.open(url, '_blank');
-    }
-
-    function sendFormToWhatsApp(event) {
-      event.preventDefault();
-      const name = document.getElementById('cust-name').value;
-      const service = document.getElementById('cust-service').value;
-      const notes = document.getElementById('cust-notes').value;
-
-      const message = `مرحباً Interpoint! 👋\n\nتفاصيل طلب الحجز:\n- الاسم: ${name}\n- الخدمة: ${service}\n- ملاحظات: ${notes}`;
+    function sendToWhatsApp(hotelName) {
+      const message = `مرحباً Interpoint! 👋\nأريد الاستفسار وحجز: (${hotelName})`;
       const url = `https://wa.me/${myPhoneNumber}?text=${encodeURIComponent(message)}`;
       window.open(url, '_blank');
     }
