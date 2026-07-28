@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Mart - هابي ماركت | توصيل 24 ساعة بأسعار السوق</title>
+    <title>Happy Mart - هابي ماركت | أقسام السوبر ماركت - توصيل 24 ساعة</title>
     <style>
         :root {
             --primary-color: #f39c12;
@@ -18,6 +18,7 @@
             margin: 0;
             padding: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
         }
 
         body {
@@ -60,13 +61,6 @@
             gap: 12px;
         }
 
-        .logo-img {
-            width: 50px;
-            height: 50px;
-            border-radius: 10px;
-            object-fit: cover;
-        }
-
         .brand-name {
             font-size: 1.6rem;
             font-weight: bold;
@@ -96,8 +90,7 @@
             background: linear-gradient(135deg, #f39c12, #d35400);
             color: white;
             text-align: center;
-            padding: 50px 20px;
-            margin-bottom: 30px;
+            padding: 40px 20px;
         }
 
         .hero h1 {
@@ -110,68 +103,80 @@
             opacity: 0.95;
         }
 
+        /* Category Nav */
+        .category-nav {
+            background: #fff;
+            padding: 15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            position: sticky;
+            top: 75px;
+            z-index: 999;
+        }
+
+        .cat-link {
+            text-decoration: none;
+            color: var(--secondary-color);
+            background: #f1f2f6;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.95rem;
+            transition: all 0.2s;
+        }
+
+        .cat-link:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
         /* Main Container */
         .container {
             max-width: 1200px;
-            margin: 0 auto;
+            margin: 30px auto;
             padding: 0 20px;
         }
 
         .section-header {
-            text-align: center;
-            margin-bottom: 35px;
+            margin: 40px 0 20px 0;
+            border-right: 5px solid var(--primary-color);
+            padding-right: 15px;
         }
 
         .section-title {
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             color: var(--secondary-color);
-            position: relative;
-            display: inline-block;
-            padding-bottom: 10px;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            right: 25%;
-            width: 50%;
-            height: 4px;
-            background-color: var(--primary-color);
-            border-radius: 2px;
         }
 
         /* Products Grid */
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-            gap: 25px;
-            margin-bottom: 60px;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 20px;
         }
 
         .product-card {
             background: #ffffff;
-            border-radius: 15px;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
         }
 
         .product-card:hover {
-            transform: translateY(-7px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+            transform: translateY(-5px);
         }
 
         .product-img {
             width: 100%;
-            height: 180px;
+            height: 160px;
             background-color: #f1f2f6;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
 
         .product-img img {
@@ -181,31 +186,32 @@
         }
 
         .product-info {
-            padding: 18px;
+            padding: 15px;
             text-align: center;
         }
 
         .product-title {
-            font-size: 1.15rem;
-            margin-bottom: 10px;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
             color: var(--secondary-color);
         }
 
         .product-price {
-            font-size: 1.1rem;
+            font-size: 1rem;
             color: var(--primary-dark);
             font-weight: bold;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
 
         .order-btn {
             background-color: var(--primary-color);
             color: white;
             text-decoration: none;
-            padding: 10px 18px;
-            border-radius: 8px;
+            padding: 8px 14px;
+            border-radius: 6px;
             display: block;
             font-weight: bold;
+            font-size: 0.9rem;
             transition: background 0.2s;
         }
 
@@ -219,6 +225,7 @@
             color: white;
             text-align: center;
             padding: 30px 20px;
+            margin-top: 50px;
         }
 
         footer p {
@@ -239,13 +246,12 @@
 
     <!-- الشريط العلوي -->
     <div class="top-bar">
-        🛵 خدمة التوصيل متوفرة <span>24 ساعة</span> طوال الأسبوع!
+        🛵 خدمة التوصيل متوفرة <span>24 ساعة</span> بأسعار السوق!
     </div>
 
-    <!-- الهيدر الشعار والتواصل -->
+    <!-- الهيدر والشعار -->
     <header>
         <div class="logo-box">
-            <!-- رمز عربة التسوق كرمز معبر عن اللوجو -->
             <div style="background: #f39c12; color: white; width: 45px; height: 45px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: bold;">🛒</div>
             <span class="brand-name">Happy Mart</span>
         </div>
@@ -257,72 +263,172 @@
     <!-- البانر الرئيسي -->
     <section class="hero">
         <h1>أهلاً بكم في Happy Mart</h1>
-        <p>جميع مستلزمات البيت والمواد الغذائية بنفس أسعار السوق والتوصيل لحد باب البيت!</p>
+        <p>اختر القسم المطلوب واطلب مباشرة عبر الواتساب!</p>
     </section>
 
-    <!-- عرض المنتجات -->
+    <!-- شريط التنقل بين الأقسام -->
+    <nav class="category-nav">
+        <a href="#fruits" class="cat-link">🍎 ركن الفواكه</a>
+        <a href="#detergents" class="cat-link">🧹 ركن المنظفات</a>
+        <a href="#chicken" class="cat-link">🍗 ركن الفراخ</a>
+        <a href="#cheese" class="cat-link">🧀 ركن الأجبان</a>
+        <a href="#rice-pasta" class="cat-link">🌾 ركن المكرونة والأرز</a>
+    </nav>
+
+    <!-- المحتوى الرئيسي والأقسام -->
     <main class="container">
-        <div class="section-header">
-            <h2 class="section-title">منتجات السوبر ماركت</h2>
-        </div>
 
-        <div class="products-grid">
-
-            <!-- منتج 1 -->
-            <div class="product-card">
-                <div class="product-img">
-                    <img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=400&q=80" alt="أرز">
+        <!-- 1. ركن الفواكه -->
+        <section id="fruits">
+            <div class="section-header">
+                <h2 class="section-title">🍎 ركن الفواكه الطازجة</h2>
+            </div>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1528825871115-3581a5387919?auto=format&fit=crop&w=400&q=80" alt="موز">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">موز بلدي</h3>
+                        <div class="product-price">سعر السوق اليوم</div>
+                        <a href="https://wa.me/201147885100?text=عايز%20اطلب%20موز%20بلدي" class="order-btn" target="_blank">اطلب الآن</a>
+                    </div>
                 </div>
-                <div class="product-info">
-                    <h3 class="product-title">أرز مصري فاخر</h3>
-                    <div class="product-price">سعر السوق</div>
-                    <a href="https://wa.me/201147885100?text=عايز%20اطلب%20أرز%20مصري" class="order-btn" target="_blank">اطلب عبر الواتساب</a>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?auto=format&fit=crop&w=400&q=80" alt="تفاح">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">تفاح أحمر</h3>
+                        <div class="product-price">سعر السوق اليوم</div>
+                        <a href="https://wa.me/201147885100?text=عايز%20اطلب%20تفاح%20أحمر" class="order-btn" target="_blank">اطلب الآن</a>
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <!-- منتج 2 -->
-            <div class="product-card">
-                <div class="product-img">
-                    <img src="https://images.unsplash.com/photo-1563636619-e9143da7973b?auto=format&fit=crop&w=400&q=80" alt="لبن">
+        <!-- 2. ركن المنظفات -->
+        <section id="detergents">
+            <div class="section-header">
+                <h2 class="section-title">🧹 ركن المنظفات والمنزل</h2>
+            </div>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1585832770485-e68a5fcfad52?auto=format&fit=crop&w=400&q=80" alt="مسحوق غسيل">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">مسحوق غسيل أتوماتيك</h3>
+                        <div class="product-price">سعر السوق اليوم</div>
+                        <a href="https://wa.me/201147885100?text=عايز%20اطلب%20مسحوق%20غسيل" class="order-btn" target="_blank">اطلب الآن</a>
+                    </div>
                 </div>
-                <div class="product-info">
-                    <h3 class="product-title">حليب طازج</h3>
-                    <div class="product-price">سعر السوق</div>
-                    <a href="https://wa.me/201147885100?text=عايز%20اطلب%20حليب%20طازج" class="order-btn" target="_blank">اطلب عبر الواتساب</a>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=400&q=80" alt="صابون أطباق">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">سائل غسيل الأطباق</h3>
+                        <div class="product-price">سعر السوق اليوم</div>
+                        <a href="https://wa.me/201147885100?text=عايز%20اطلب%20سائل%20غسيل%20أطباق" class="order-btn" target="_blank">اطلب الآن</a>
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <!-- منتج 3 -->
-            <div class="product-card">
-                <div class="product-img">
-                    <img src="https://images.unsplash.com/photo-1528825871115-3581a5387919?auto=format&fit=crop&w=400&q=80" alt="موز">
+        <!-- 3. ركن الفراخ -->
+        <section id="chicken">
+            <div class="section-header">
+                <h2 class="section-title">🍗 ركن الفراخ والدواجن</h2>
+            </div>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1604503468506-a8da13d82791?auto=format&fit=crop&w=400&q=80" alt="فراخ طازجة">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">فراخ بيضاء طازجة (كيلو)</h3>
+                        <div class="product-price">سعر البورصة اليوم</div>
+                        <a href="https://wa.me/201147885100?text=عايز%20اطلب%20فراخ%20بيضاء" class="order-btn" target="_blank">اطلب الآن</a>
+                    </div>
                 </div>
-                <div class="product-info">
-                    <h3 class="product-title">فواكه طازجة</h3>
-                    <div class="product-price">سعر السوق</div>
-                    <a href="https://wa.me/201147885100?text=عايز%20اطلب%20فواكه%20طازجة" class="order-btn" target="_blank">اطلب عبر الواتساب</a>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf?auto=format&fit=crop&w=400&q=80" alt="بانيه">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">بانيه دجاج طازج</h3>
+                        <div class="product-price">سعر السوق اليوم</div>
+                        <a href="https://wa.me/201147885100?text=عايز%20اطلب%20بانيه%20دجاج" class="order-btn" target="_blank">اطلب الآن</a>
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <!-- منتج 4 -->
-            <div class="product-card">
-                <div class="product-img">
-                    <img src="https://images.unsplash.com/photo-1608198093002-ad4e005484ec?auto=format&fit=crop&w=400&q=80" alt="مخبوزات">
+        <!-- 4. ركن الأجبان -->
+        <section id="cheese">
+            <div class="section-header">
+                <h2 class="section-title">🧀 ركن الأجبان والألبان</h2>
+            </div>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?auto=format&fit=crop&w=400&q=80" alt="جبنة">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">جبنة بيضاء رومي / بيضاء</h3>
+                        <div class="product-price">سعر السوق اليوم</div>
+                        <a href="https://wa.me/201147885100?text=عايز%20اطلب%20جبنة" class="order-btn" target="_blank">اطلب الآن</a>
+                    </div>
                 </div>
-                <div class="product-info">
-                    <h3 class="product-title">مخبوزات وطوارئ البيت</h3>
-                    <div class="product-price">سعر السوق</div>
-                    <a href="https://wa.me/201147885100?text=عايز%20اطلب%20مخبوزات" class="order-btn" target="_blank">اطلب عبر الواتساب</a>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1563636619-e9143da7973b?auto=format&fit=crop&w=400&q=80" alt="لبن">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">حليب طازج كامل الدسم</h3>
+                        <div class="product-price">سعر السوق اليوم</div>
+                        <a href="https://wa.me/201147885100?text=عايز%20اطلب%20حليب" class="order-btn" target="_blank">اطلب الآن</a>
+                    </div>
                 </div>
             </div>
+        </section>
 
-        </div>
+        <!-- 5. ركن المكرونة والأرز -->
+        <section id="rice-pasta">
+            <div class="section-header">
+                <h2 class="section-title">🌾 ركن المكرونة والأرز</h2>
+            </div>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=400&q=80" alt="أرز">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">أرز مصري درجة أولى</h3>
+                        <div class="product-price">سعر السوق اليوم</div>
+                        <a href="https://wa.me/201147885100?text=عايز%20اطلب%20أرز%20مصري" class="order-btn" target="_blank">اطلب الآن</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1621996346565-e3def6164286?auto=format&fit=crop&w=400&q=80" alt="مكرونة">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">مكرونة أنواع مختلفة</h3>
+                        <div class="product-price">سعر السوق اليوم</div>
+                        <a href="https://wa.me/201147885100?text=عايز%20اطلب%20مكرونة" class="order-btn" target="_blank">اطلب الآن</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <!-- الفوتر -->
     <footer>
         <p>Happy Mart - خدمة التوصيل السريع على مدار 24 ساعة 🚀</p>
-        <p>للطلبات المباشرة أو الاستفسار اتصل بنا أو راسلنا:</p>
+        <p>للطلبات والاستفسارات تواصل معنا عبر الواتساب:</p>
         <div class="footer-phone">01147885100</div>
     </footer>
 
