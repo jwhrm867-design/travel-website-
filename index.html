@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Happy Mart - هابي ماركت | توصيل 24 ساعة بأسعار السوق</title>
     <style>
+        :root {
+            --primary-color: #f39c12;
+            --primary-dark: #d35400;
+            --secondary-color: #2c3e50;
+            --whatsapp-color: #25d366;
+            --bg-light: #f8f9fa;
+        }
+
         * {
             box-sizing: border-box;
             margin: 0;
@@ -13,99 +21,79 @@
         }
 
         body {
-            background-color: #f8f9fa;
+            background-color: var(--bg-light);
             color: #333;
         }
 
-        /* Top Bar */
+        /* Top Announcement Bar */
         .top-bar {
-            background-color: #e67e22;
-            color: white;
+            background-color: var(--secondary-color);
+            color: #fff;
             text-align: center;
-            padding: 10px;
+            padding: 10px 15px;
             font-weight: bold;
-            font-size: 1.1rem;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+            font-size: 1rem;
+        }
+
+        .top-bar span {
+            color: var(--primary-color);
         }
 
         /* Header */
         header {
-            background: white;
-            padding: 15px 20px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            background: #ffffff;
+            padding: 15px 5%;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
             gap: 15px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
-        .logo-container {
+        .logo-box {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 12px;
         }
 
         .logo-img {
-            height: 60px;
-            width: 60px;
-            border-radius: 8px;
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
             object-fit: cover;
         }
 
-        .logo-text {
-            font-size: 1.8rem;
+        .brand-name {
+            font-size: 1.6rem;
             font-weight: bold;
-            color: #d35400;
+            color: var(--primary-dark);
         }
 
         .contact-btn {
-            background-color: #25d366;
+            background-color: var(--whatsapp-color);
             color: white;
             text-decoration: none;
             padding: 10px 20px;
-            border-radius: 25px;
+            border-radius: 30px;
             font-weight: bold;
-            display: inline-flex;
+            display: flex;
             align-items: center;
             gap: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: background-color 0.2s;
+            box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
+            transition: transform 0.2s;
         }
 
         .contact-btn:hover {
-            background-color: #1ebc57;
+            transform: scale(1.03);
         }
 
-        /* Category Nav */
-        .category-nav {
-            background: #2c3e50;
-            padding: 10px 20px;
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .category-nav a {
-            color: white;
-            text-decoration: none;
-            padding: 8px 15px;
-            border-radius: 15px;
-            background: rgba(255,255,255,0.1);
-            font-size: 0.95rem;
-            transition: background 0.2s;
-        }
-
-        .category-nav a:hover {
-            background: #e67e22;
-        }
-
-        /* Hero Banner */
+        /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), #e67e22;
+            background: linear-gradient(135deg, #f39c12, #d35400);
             color: white;
             text-align: center;
             padding: 50px 20px;
@@ -122,5 +110,221 @@
             opacity: 0.95;
         }
 
-        /* Container */
+        /* Main Container */
         .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            color: var(--secondary-color);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 25%;
+            width: 50%;
+            height: 4px;
+            background-color: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        /* Products Grid */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 25px;
+            margin-bottom: 60px;
+        }
+
+        .product-card {
+            background: #ffffff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .product-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        }
+
+        .product-img {
+            width: 100%;
+            height: 180px;
+            background-color: #f1f2f6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 18px;
+            text-align: center;
+        }
+
+        .product-title {
+            font-size: 1.15rem;
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+        }
+
+        .product-price {
+            font-size: 1.1rem;
+            color: var(--primary-dark);
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .order-btn {
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            padding: 10px 18px;
+            border-radius: 8px;
+            display: block;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+
+        .order-btn:hover {
+            background-color: var(--primary-dark);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary-color);
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+            font-size: 1rem;
+        }
+
+        .footer-phone {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            font-weight: bold;
+            direction: ltr;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- الشريط العلوي -->
+    <div class="top-bar">
+        🛵 خدمة التوصيل متوفرة <span>24 ساعة</span> طوال الأسبوع!
+    </div>
+
+    <!-- الهيدر الشعار والتواصل -->
+    <header>
+        <div class="logo-box">
+            <!-- رمز عربة التسوق كرمز معبر عن اللوجو -->
+            <div style="background: #f39c12; color: white; width: 45px; height: 45px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: bold;">🛒</div>
+            <span class="brand-name">Happy Mart</span>
+        </div>
+        <a href="https://wa.me/201147885100?text=السلام%20علكم،%20عايز%20اطلب%20من%20Happy%20Mart" class="contact-btn" target="_blank">
+            💬 اطلب الآن: 01147885100
+        </a>
+    </header>
+
+    <!-- البانر الرئيسي -->
+    <section class="hero">
+        <h1>أهلاً بكم في Happy Mart</h1>
+        <p>جميع مستلزمات البيت والمواد الغذائية بنفس أسعار السوق والتوصيل لحد باب البيت!</p>
+    </section>
+
+    <!-- عرض المنتجات -->
+    <main class="container">
+        <div class="section-header">
+            <h2 class="section-title">منتجات السوبر ماركت</h2>
+        </div>
+
+        <div class="products-grid">
+
+            <!-- منتج 1 -->
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=400&q=80" alt="أرز">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">أرز مصري فاخر</h3>
+                    <div class="product-price">سعر السوق</div>
+                    <a href="https://wa.me/201147885100?text=عايز%20اطلب%20أرز%20مصري" class="order-btn" target="_blank">اطلب عبر الواتساب</a>
+                </div>
+            </div>
+
+            <!-- منتج 2 -->
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="https://images.unsplash.com/photo-1563636619-e9143da7973b?auto=format&fit=crop&w=400&q=80" alt="لبن">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">حليب طازج</h3>
+                    <div class="product-price">سعر السوق</div>
+                    <a href="https://wa.me/201147885100?text=عايز%20اطلب%20حليب%20طازج" class="order-btn" target="_blank">اطلب عبر الواتساب</a>
+                </div>
+            </div>
+
+            <!-- منتج 3 -->
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="https://images.unsplash.com/photo-1528825871115-3581a5387919?auto=format&fit=crop&w=400&q=80" alt="موز">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">فواكه طازجة</h3>
+                    <div class="product-price">سعر السوق</div>
+                    <a href="https://wa.me/201147885100?text=عايز%20اطلب%20فواكه%20طازجة" class="order-btn" target="_blank">اطلب عبر الواتساب</a>
+                </div>
+            </div>
+
+            <!-- منتج 4 -->
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="https://images.unsplash.com/photo-1608198093002-ad4e005484ec?auto=format&fit=crop&w=400&q=80" alt="مخبوزات">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">مخبوزات وطوارئ البيت</h3>
+                    <div class="product-price">سعر السوق</div>
+                    <a href="https://wa.me/201147885100?text=عايز%20اطلب%20مخبوزات" class="order-btn" target="_blank">اطلب عبر الواتساب</a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- الفوتر -->
+    <footer>
+        <p>Happy Mart - خدمة التوصيل السريع على مدار 24 ساعة 🚀</p>
+        <p>للطلبات المباشرة أو الاستفسار اتصل بنا أو راسلنا:</p>
+        <div class="footer-phone">01147885100</div>
+    </footer>
+
+</body>
+</html>
