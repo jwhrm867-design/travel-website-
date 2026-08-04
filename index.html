@@ -3,434 +3,209 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Mart - هابي ماركت | أقسام السوبر ماركت - توصيل 24 ساعة</title>
+    <title>جوهر | أفضل كابلات الشحن السريع</title>
+    <!-- Tailwind CSS للتنسيق العصري السريع -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        :root {
-            --primary-color: #f39c12;
-            --primary-dark: #d35400;
-            --secondary-color: #2c3e50;
-            --whatsapp-color: #25d366;
-            --bg-light: #f8f9fa;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            scroll-behavior: smooth;
-        }
-
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap');
         body {
-            background-color: var(--bg-light);
-            color: #333;
-        }
-
-        /* Top Announcement Bar */
-        .top-bar {
-            background-color: var(--secondary-color);
-            color: #fff;
-            text-align: center;
-            padding: 10px 15px;
-            font-weight: bold;
-            font-size: 1rem;
-        }
-
-        .top-bar span {
-            color: var(--primary-color);
-        }
-
-        /* Header */
-        header {
-            background: #ffffff;
-            padding: 15px 5%;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 15px;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .logo-box {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .brand-name {
-            font-size: 1.6rem;
-            font-weight: bold;
-            color: var(--primary-dark);
-        }
-
-        .contact-btn {
-            background-color: var(--whatsapp-color);
-            color: white;
-            text-decoration: none;
-            padding: 10px 20px;
-            border-radius: 30px;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
-            transition: transform 0.2s;
-        }
-
-        .contact-btn:hover {
-            transform: scale(1.03);
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, #f39c12, #d35400);
-            color: white;
-            text-align: center;
-            padding: 40px 20px;
-        }
-
-        .hero h1 {
-            font-size: 2.2rem;
-            margin-bottom: 10px;
-        }
-
-        .hero p {
-            font-size: 1.1rem;
-            opacity: 0.95;
-        }
-
-        /* Category Nav */
-        .category-nav {
-            background: #fff;
-            padding: 15px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-            flex-wrap: wrap;
-            position: sticky;
-            top: 75px;
-            z-index: 999;
-        }
-
-        .cat-link {
-            text-decoration: none;
-            color: var(--secondary-color);
-            background: #f1f2f6;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-weight: bold;
-            font-size: 0.95rem;
-            transition: all 0.2s;
-        }
-
-        .cat-link:hover {
-            background: var(--primary-color);
-            color: white;
-        }
-
-        /* Main Container */
-        .container {
-            max-width: 1200px;
-            margin: 30px auto;
-            padding: 0 20px;
-        }
-
-        .section-header {
-            margin: 40px 0 20px 0;
-            border-right: 5px solid var(--primary-color);
-            padding-right: 15px;
-        }
-
-        .section-title {
-            font-size: 1.6rem;
-            color: var(--secondary-color);
-        }
-
-        /* Products Grid */
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-            gap: 20px;
-        }
-
-        .product-card {
-            background: #ffffff;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-            transition: transform 0.2s;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .product-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .product-img {
-            width: 100%;
-            height: 160px;
-            background-color: #f1f2f6;
-        }
-
-        .product-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .product-info {
-            padding: 15px;
-            text-align: center;
-        }
-
-        .product-title {
-            font-size: 1.1rem;
-            margin-bottom: 8px;
-            color: var(--secondary-color);
-        }
-
-        .product-price {
-            font-size: 1rem;
-            color: var(--primary-dark);
-            font-weight: bold;
-            margin-bottom: 12px;
-        }
-
-        .order-btn {
-            background-color: var(--primary-color);
-            color: white;
-            text-decoration: none;
-            padding: 8px 14px;
-            border-radius: 6px;
-            display: block;
-            font-weight: bold;
-            font-size: 0.9rem;
-            transition: background 0.2s;
-        }
-
-        .order-btn:hover {
-            background-color: var(--primary-dark);
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--secondary-color);
-            color: white;
-            text-align: center;
-            padding: 30px 20px;
-            margin-top: 50px;
-        }
-
-        footer p {
-            margin-bottom: 10px;
-            font-size: 1rem;
-        }
-
-        .footer-phone {
-            font-size: 1.5rem;
-            color: var(--primary-color);
-            font-weight: bold;
-            direction: ltr;
-            margin-top: 5px;
+            font-family: 'Cairo', sans-serif;
         }
     </style>
 </head>
-<body>
+<body class="bg-gray-50 text-gray-800">
 
-    <!-- الشريط العلوي -->
-    <div class="top-bar">
-        🛵 خدمة التوصيل متوفرة <span>24 ساعة</span> بأسعار السوق!
-    </div>
-
-    <!-- الهيدر والشعار -->
-    <header>
-        <div class="logo-box">
-            <div style="background: #f39c12; color: white; width: 45px; height: 45px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: bold;">🛒</div>
-            <span class="brand-name">Happy Mart</span>
+    <!-- Header / Navbar -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2 space-x-reverse">
+                <i class="fa-solid fa-bolt text-yellow-500 text-3xl"></i>
+                <span class="text-2xl font-extrabold text-gray-900 tracking-wide">جوهر <span class="text-blue-600">Gawhar</span></span>
+            </div>
+            <a href="#products" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-5 rounded-full transition shadow-md">
+                تسوق الآن
+            </a>
         </div>
-        <a href="https://wa.me/201147885100?text=السلام%20علكم،%20عايز%20اطلب%20من%20Happy%20Mart" class="contact-btn" target="_blank">
-            💬 اطلب الآن: 01147885100
-        </a>
     </header>
 
-    <!-- البانر الرئيسي -->
-    <section class="hero">
-        <h1>أهلاً بكم في Happy Mart</h1>
-        <p>اختر القسم المطلوب واطلب مباشرة عبر الواتساب!</p>
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-blue-900 to-indigo-800 text-white py-20 px-4 text-center">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-4xl md:text-6xl font-black mb-6 leading-tight">شاحنك أسرع وأمتن مع كابلات <span class="text-yellow-400">جوهر</span></h1>
+            <p class="text-lg md:text-xl text-gray-200 mb-8 max-w-2xl mx-auto">
+                كابلات شحن فائقة السرعة، مقاومة للقطع والإنثناء، مصممة لتدوم وتدعم جميع أنواع الهواتف الذكية.
+            </p>
+            <div class="flex justify-center gap-4 flex-wrap">
+                <a href="#order-section" class="bg-yellow-400 hover:bg-yellow-500 text-gray-900 text-lg font-bold py-3 px-8 rounded-full shadow-lg transition transform hover:-translate-y-1">
+                    طلب شاحن الآن
+                </a>
+            </div>
+        </div>
     </section>
 
-    <!-- شريط التنقل بين الأقسام -->
-    <nav class="category-nav">
-        <a href="#fruits" class="cat-link">🍎 ركن الفواكه</a>
-        <a href="#detergents" class="cat-link">🧹 ركن المنظفات</a>
-        <a href="#chicken" class="cat-link">🍗 ركن الفراخ</a>
-        <a href="#cheese" class="cat-link">🧀 ركن الأجبان</a>
-        <a href="#rice-pasta" class="cat-link">🌾 ركن المكرونة والأرز</a>
-    </nav>
+    <!-- Features -->
+    <section class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+            <div class="p-6 border rounded-2xl shadow-sm hover:shadow-md transition">
+                <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
+                    <i class="fa-solid fa-bolt-lightning"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">شحن سريع جداً</h3>
+                <p class="text-gray-600">يدعم تقنيات الشحن السريع حتى 100 وات لنقل الطاقة بأعلى كفاءة.</p>
+            </div>
+            <div class="p-6 border rounded-2xl shadow-sm hover:shadow-md transition">
+                <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">خامات مضادة للقطع</h3>
+                <p class="text-gray-600">مغلف بطبقات قماشية مدعمة تتحمل أكثر من 20,000 ثنية.</p>
+            </div>
+            <div class="p-6 border rounded-2xl shadow-sm hover:shadow-md transition">
+                <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
+                    <i class="fa-solid fa-truck-fast"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">توصيل سريع</h3>
+                <p class="text-gray-600">خدمة توصيل فورية لجميع المحافظات والدفع عند الاستلام.</p>
+            </div>
+        </div>
+    </section>
 
-    <!-- المحتوى الرئيسي والأقسام -->
-    <main class="container">
+    <!-- Products Showcase -->
+    <section id="products" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">أنواع كابلات <span class="text-blue-600">جوهر</span></h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Product 1 -->
+                <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition">
+                    <div class="h-48 bg-gray-200 flex items-center justify-center">
+                        <i class="fa-solid fa-plug text-6xl text-gray-400"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2">كابل جوهر Type-C إلى Type-C</h3>
+                        <p class="text-gray-600 text-sm mb-4">طول 1.2 متر - يدعم الشحن السريع 100W ونقل البيانات.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-black text-blue-600">150 ج.م</span>
+                            <button onclick="selectProduct('كابل Type-C إلى Type-C')" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-bold">اختيار</button>
+                        </div>
+                    </div>
+                </div>
 
-        <!-- 1. ركن الفواكه -->
-        <section id="fruits">
-            <div class="section-header">
-                <h2 class="section-title">🍎 ركن الفواكه الطازجة</h2>
-            </div>
-            <div class="products-grid">
-                <div class="product-card">
-                    <div class="product-img">
-                        <img src="https://images.unsplash.com/photo-1528825871115-3581a5387919?auto=format&fit=crop&w=400&q=80" alt="موز">
+                <!-- Product 2 -->
+                <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition border-2 border-blue-600">
+                    <div class="h-48 bg-gray-200 flex items-center justify-center relative">
+                        <span class="absolute top-2 right-2 bg-yellow-400 text-gray-900 text-xs font-bold px-3 py-1 rounded-full">الأكثر طلباً</span>
+                        <i class="fa-solid fa-mobile-screen text-6xl text-gray-400"></i>
                     </div>
-                    <div class="product-info">
-                        <h3 class="product-title">موز بلدي</h3>
-                        <div class="product-price">سعر السوق اليوم</div>
-                        <a href="https://wa.me/201147885100?text=عايز%20اطلب%20موز%20بلدي" class="order-btn" target="_blank">اطلب الآن</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-img">
-                        <img src="https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?auto=format&fit=crop&w=400&q=80" alt="تفاح">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">تفاح أحمر</h3>
-                        <div class="product-price">سعر السوق اليوم</div>
-                        <a href="https://wa.me/201147885100?text=عايز%20اطلب%20تفاح%20أحمر" class="order-btn" target="_blank">اطلب الآن</a>
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2">كابل جوهر آيفون Lightning</h3>
+                        <p class="text-gray-600 text-sm mb-4">طول 1.5 متر - معتمد لأجهزة آيفون وآيباد بشحن آمن.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-black text-blue-600">180 ج.م</span>
+                            <button onclick="selectProduct('كابل آيفون Lightning')" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-bold">اختيار</button>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
 
-        <!-- 2. ركن المنظفات -->
-        <section id="detergents">
-            <div class="section-header">
-                <h2 class="section-title">🧹 ركن المنظفات والمنزل</h2>
-            </div>
-            <div class="products-grid">
-                <div class="product-card">
-                    <div class="product-img">
-                        <img src="https://images.unsplash.com/photo-1585832770485-e68a5fcfad52?auto=format&fit=crop&w=400&q=80" alt="مسحوق غسيل">
+                <!-- Product 3 -->
+                <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition">
+                    <div class="h-48 bg-gray-200 flex items-center justify-center">
+                        <i class="fa-solid fa-usb text-6xl text-gray-400"></i>
                     </div>
-                    <div class="product-info">
-                        <h3 class="product-title">مسحوق غسيل أتوماتيك</h3>
-                        <div class="product-price">سعر السوق اليوم</div>
-                        <a href="https://wa.me/201147885100?text=عايز%20اطلب%20مسحوق%20غسيل" class="order-btn" target="_blank">اطلب الآن</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-img">
-                        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=400&q=80" alt="صابون أطباق">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">سائل غسيل الأطباق</h3>
-                        <div class="product-price">سعر السوق اليوم</div>
-                        <a href="https://wa.me/201147885100?text=عايز%20اطلب%20سائل%20غسيل%20أطباق" class="order-btn" target="_blank">اطلب الآن</a>
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2">كابل جوهر USB إلى Type-C</h3>
+                        <p class="text-gray-600 text-sm mb-4">طول 1 متر - قماش مقوى متين لجميع الهواتف الذكية.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-black text-blue-600">130 ج.م</span>
+                            <button onclick="selectProduct('كابل USB إلى Type-C')" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-bold">اختيار</button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- 3. ركن الفراخ -->
-        <section id="chicken">
-            <div class="section-header">
-                <h2 class="section-title">🍗 ركن الفراخ والدواجن</h2>
-            </div>
-            <div class="products-grid">
-                <div class="product-card">
-                    <div class="product-img">
-                        <img src="https://images.unsplash.com/photo-1604503468506-a8da13d82791?auto=format&fit=crop&w=400&q=80" alt="فراخ طازجة">
+    <!-- Order Section -->
+    <section id="order-section" class="py-16 bg-white">
+        <div class="max-w-2xl mx-auto px-4">
+            <div class="bg-gray-50 border border-gray-200 rounded-3xl p-8 shadow-lg">
+                <h2 class="text-2xl font-extrabold text-center mb-2">إتمام الطلب المباشر</h2>
+                <p class="text-gray-500 text-center mb-6 text-sm">قم بتعبئة البيانات وسيتم تحويلك مباشرة للواتساب لتأكيد الطلب</p>
+                
+                <form id="orderForm" onsubmit="sendToWhatsApp(event)" class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-bold mb-1">الاسم بالكامل</label>
+                        <input type="text" id="name" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-600" placeholder="أدخل اسمك الكريم">
                     </div>
-                    <div class="product-info">
-                        <h3 class="product-title">فراخ بيضاء طازجة (كيلو)</h3>
-                        <div class="product-price">سعر البورصة اليوم</div>
-                        <a href="https://wa.me/201147885100?text=عايز%20اطلب%20فراخ%20بيضاء" class="order-btn" target="_blank">اطلب الآن</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-img">
-                        <img src="https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf?auto=format&fit=crop&w=400&q=80" alt="بانيه">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">بانيه دجاج طازج</h3>
-                        <div class="product-price">سعر السوق اليوم</div>
-                        <a href="https://wa.me/201147885100?text=عايز%20اطلب%20بانيه%20دجاج" class="order-btn" target="_blank">اطلب الآن</a>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- 4. ركن الأجبان -->
-        <section id="cheese">
-            <div class="section-header">
-                <h2 class="section-title">🧀 ركن الأجبان والألبان</h2>
-            </div>
-            <div class="products-grid">
-                <div class="product-card">
-                    <div class="product-img">
-                        <img src="https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?auto=format&fit=crop&w=400&q=80" alt="جبنة">
+                    <div>
+                        <label class="block text-sm font-bold mb-1">رقم الهاتف للتواصل</label>
+                        <input type="tel" id="phone" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-600" placeholder="01xxxxxxxxx">
                     </div>
-                    <div class="product-info">
-                        <h3 class="product-title">جبنة بيضاء رومي / بيضاء</h3>
-                        <div class="product-price">سعر السوق اليوم</div>
-                        <a href="https://wa.me/201147885100?text=عايز%20اطلب%20جبنة" class="order-btn" target="_blank">اطلب الآن</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-img">
-                        <img src="https://images.unsplash.com/photo-1563636619-e9143da7973b?auto=format&fit=crop&w=400&q=80" alt="لبن">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">حليب طازج كامل الدسم</h3>
-                        <div class="product-price">سعر السوق اليوم</div>
-                        <a href="https://wa.me/201147885100?text=عايز%20اطلب%20حليب" class="order-btn" target="_blank">اطلب الآن</a>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- 5. ركن المكرونة والأرز -->
-        <section id="rice-pasta">
-            <div class="section-header">
-                <h2 class="section-title">🌾 ركن المكرونة والأرز</h2>
-            </div>
-            <div class="products-grid">
-                <div class="product-card">
-                    <div class="product-img">
-                        <img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=400&q=80" alt="أرز">
+                    <div>
+                        <label class="block text-sm font-bold mb-1">المنتج المطلوب</label>
+                        <select id="product" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-600">
+                            <option value="كابل Type-C إلى Type-C">كابل جوهر Type-C إلى Type-C (150 ج.م)</option>
+                            <option value="كابل آيفون Lightning">كابل جوهر آيفون Lightning (180 ج.م)</option>
+                            <option value="كابل USB إلى Type-C">كابل جوهر USB إلى Type-C (130 ج.م)</option>
+                        </select>
                     </div>
-                    <div class="product-info">
-                        <h3 class="product-title">أرز مصري درجة أولى</h3>
-                        <div class="product-price">سعر السوق اليوم</div>
-                        <a href="https://wa.me/201147885100?text=عايز%20اطلب%20أرز%20مصري" class="order-btn" target="_blank">اطلب الآن</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-img">
-                        <img src="https://images.unsplash.com/photo-1621996346565-e3def6164286?auto=format&fit=crop&w=400&q=80" alt="مكرونة">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">مكرونة أنواع مختلفة</h3>
-                        <div class="product-price">سعر السوق اليوم</div>
-                        <a href="https://wa.me/201147885100?text=عايز%20اطلب%20مكرونة" class="order-btn" target="_blank">اطلب الآن</a>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-    </main>
+                    <div>
+                        <label class="block text-sm font-bold mb-1">الكمية</label>
+                        <input type="number" id="quantity" min="1" value="1" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-600">
+                    </div>
 
-    <!-- الفوتر -->
-    <footer>
-        <p>Happy Mart - خدمة التوصيل السريع على مدار 24 ساعة 🚀</p>
-        <p>للطلبات والاستفسارات تواصل معنا عبر الواتساب:</p>
-        <div class="footer-phone">01147885100</div>
+                    <div>
+                        <label class="block text-sm font-bold mb-1">عنوان التوصيل بالتفصيل</label>
+                        <textarea id="address" rows="3" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-600" placeholder="المحافظة - المدينة - الشارع - رقم المبنى"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-4 rounded-xl shadow-lg transition flex items-center justify-center gap-2 text-lg">
+                        <i class="fa-brands fa-whatsapp text-2xl"></i>
+                        ارسال الطلب عبر الواتساب
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8 border-t border-gray-800 text-center">
+        <p class="text-gray-400 text-sm">جميع الحقوق محفوظة &copy; 2026 - براند <span class="text-white font-bold">جوهر Gawhar</span></p>
+        <p class="text-gray-500 text-xs mt-2">للتواصل المباشر: 01223364836</p>
     </footer>
 
+    <!-- JavaScript Handling -->
+    <script>
+        function selectProduct(productName) {
+            document.getElementById('product').value = productName;
+            document.getElementById('order-section').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function sendToWhatsApp(event) {
+            event.preventDefault();
+
+            // بيانات الواتساب
+            const targetPhone = "201223364836"; // الرقم المطلوب بالرمز الدولي
+            
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const product = document.getElementById('product').value;
+            const quantity = document.getElementById('quantity').value;
+            const address = document.getElementById('address').value;
+
+            // بناء نص الرسالة
+            const message = `مرحباً براند جوهر 👋%0Aأرغب في تقديم طلب جديد:%0A%0A📌 *المنتج:* ${product}%0A🔢 *الكمية:* ${quantity}%0A👤 *الاسم:* ${name}%0A📞 *رقم الهاتف:* ${phone}%0A🏠 *العنوان:* ${address}`;
+
+            // رابط التحويل للواتساب
+            const whatsappUrl = `https://wa.me/${targetPhone}?text=${message}`;
+
+            // فتح الواتساب في نافذة جديدة
+            window.open(whatsappUrl, '_blank');
+        }
+    </script>
 </body>
 </html>
